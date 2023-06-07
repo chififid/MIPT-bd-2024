@@ -1,0 +1,22 @@
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#646669;}
+</style>
+<image style="display:none;overflow:visible;" width="20" height="20" xlink:href="brackets-icon.png"  transform="matrix(40 0 0 40 0 0)">
+</image>
+<path class="st0" d="M440,401.3h-80v-90c0-16.6,13.4-30,30-30h20c16.6,0,30,13.4,30,30V401.3z"/>
+<rect x="157.5" y="481.3" class="st0" width="80" height="120"/>
+<rect x="562.5" y="481.3" class="st0" width="80" height="120"/>
+<rect x="720" y="681.3" class="st0" width="80" height="120"/>
+<rect x="440" y="681.3" class="st0" width="80" height="120"/>
+<rect x="279.9" y="681.3" class="st0" width="80" height="120"/>
+<rect x="-0.1" y="681.3" class="st0" width="80" height="120"/>
+<path class="st0" d="M642.5,481.3h-485v-50c0-16.6,13.4-30,30-30h425c16.6,0,30,13.4,30,30V481.3z"/>
+<path class="st0" d="M360,681.3H-0.2v-50c0-16.6,13.4-30,30-30H330c16.6,0,30,13.4,30,30V681.3z"/>
+<path class="st0" d="M800,681.3H440v-50c0-16.6,13.4-30,30-30h300c16.6,0,30,13.4,30,30V681.3z"/>
+<path class="st0" d="M393.7,236.6l-60.8,32c-9.9,5.2-21.6-3.2-19.7-14.3l11.6-67.7c0.8-4.4-0.7-8.9-3.9-12l-49.2-47.9
+	c-8-7.8-3.6-21.5,7.5-23.1l68-9.9c4.4-0.6,8.2-3.4,10.2-7.4l30.4-61.6c5-10.1,19.3-10.1,24.3,0l30.4,61.6c2,4,5.8,6.8,10.2,7.4
+	l68,9.9c11.1,1.6,15.6,15.3,7.5,23.1L479,174.5c-3.2,3.1-4.7,7.6-3.9,12l11.6,67.7c1.9,11.1-9.7,19.5-19.7,14.3l-60.8-32
+	C402.4,234.5,397.6,234.5,393.7,236.6z"/>
+</svg>
