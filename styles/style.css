@@ -10,6 +10,10 @@ body {
   padding-top: calc(4rem + 36px);
 }
 
+i {
+  font-style: italic;
+}
+
 .block > * {
   max-width: 1080px;
   margin: 0 auto;
@@ -27,14 +31,38 @@ b {
   font-weight: bold;
 }
 
-.text-link {
+.text-link, .text-copy {
   color: #646669;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
+  position: relative;
 }
-.text-link:hover {
+.text-link:hover, .text-copy:hover {
   color: #d1d0c5;
+}
+
+.text-copy::after {
+  content: "Copied!";
+  position: absolute;
+  padding: 0.75rem;
+  border-radius: 5px;
+  background: #2c2e31;
+  font-weight: normal;
+  color: #d1d0c5;
+  line-height: 1rem;
+  transition: 0.3s opacity;
+  top: -0.2rem;
+  left: 50%;
+  transform: translate3d(-50%, -100%, 0);
+  opacity: 0;
+}
+.text-copy-successful::after {
+  opacity: 1;
+}
+.text-copy-successful-hidden::after {
+  display: none;
 }
 
 .block-header {
@@ -183,6 +211,7 @@ b {
 
 .information-item {
   text-align: center;
+  width: 100%;
 }
 .information-item__title {
   font-size: 1.5625rem;
@@ -303,7 +332,12 @@ b {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+.join__item {
+  max-width: 700px;
+  width: 100%;
 }
 
 .block-footer {

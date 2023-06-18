@@ -1,10 +1,13 @@
 const body = document.body;
 const header = document.getElementById("header");
 const burgerMenu = document.getElementById("burger-menu");
+const copyDs = document.getElementById("copy-ds");
 const open = "block-open";
 const scrollUp = "scroll-up";
 const scrollDown = "scroll-down";
 const scrollTransition = "scroll-transition";
+const successful = "text-copy-successful";
+const successfulHidden = "text-copy-successful-hidden";
 
 let fixedHeader = false;
 let lastScroll = 0;
@@ -48,3 +51,21 @@ burgerMenu.addEventListener("click", () => {
     header.classList.add(open);
   }
 });
+
+function copy(text) {
+  if (!navigator.clipboard) {
+    return prompt("Copy to clipboard: Ctrl+C, Enter", text);;
+  }
+
+  navigator.clipboard.writeText(text);
+
+
+  copyDs.classList.remove(successfulHidden);
+  copyDs.classList.add(successful);
+  setTimeout(() => {
+    copyDs.classList.remove(successful);
+  }, 2000);//
+  setTimeout(() => {
+    copyDs.classList.add(successfulHidden);
+  }, 2200);//
+}

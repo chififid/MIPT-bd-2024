@@ -34,6 +34,9 @@ body {
   padding-top: calc($main-padding * 2 + 36px);
 }
 
+i {
+	font-style: italic;
+}
 
 .block > * {
   max-width: $main-width;
@@ -52,14 +55,42 @@ b {
   font-weight: bold;
 }
 
-.text-link {
+.text-link, .text-copy {
   color: $link-color;
   font-weight: bold;
   text-decoration: none;
   transition: color $transition-delay;
+  cursor: pointer;
+  position: relative;
   
   &:hover {
     color: $text-color;
+  }
+}
+
+.text-copy {
+  &::after {
+    content: "Copied!";
+    position: absolute;
+    padding: $main-gap;
+    border-radius: 5px;
+    background: $sub-bg-color;
+    font-weight: normal;
+    color: $text-color;
+    line-height: 1rem;
+    transition: $transition-delay opacity;
+    top: -0.2rem;
+    left: 50%;
+    transform: translate3d(-50%, -100%, 0);
+    opacity: 0;
+  }
+
+  &-successful::after {
+    opacity: 1;
+  }
+  
+  &-successful-hidden::after {
+    display: none;
   }
 }
 
@@ -232,6 +263,7 @@ b {
 
 .information-item {
   text-align: center;
+  width: 100%;
   
   &__title {
     font-size: 1.5625rem;
@@ -372,7 +404,13 @@ b {
     flex-direction: column;
     align-items: center;
     gap: calc($main-padding / 2);
-    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+
+  &__item {
+    max-width: 700px;
+    width: 100%;
   }
 }
 
