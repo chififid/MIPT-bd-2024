@@ -2,18 +2,27 @@ const body = document.body;
 const header = document.getElementById("header");
 const burgerMenu = document.getElementById("burger-menu");
 const copyDs = document.getElementById("copy-ds");
+const anchors = document.querySelectorAll(".block > *");
+const navItems = document.querySelectorAll(".navigation__item");
 const open = "block-open";
 const scrollUp = "scroll-up";
 const scrollDown = "scroll-down";
 const scrollTransition = "scroll-transition";
 const successful = "text-copy-successful";
 const successfulHidden = "text-copy-successful-hidden";
+const navItemActive = "navigation__item-active";
 
 let fixedHeader = false;
 let lastScroll = 0;
 
+let anchorsHeight = {};
+updateaAnchorsHeight();
+updateaNavItems();
+
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
+  updateaAnchorsHeight();
+  updateaNavItems();
 
   if (currentScroll <= 0) {
     fixedHeader = false;
@@ -59,7 +68,6 @@ function copy(text) {
 
   navigator.clipboard.writeText(text);
 
-
   copyDs.classList.remove(successfulHidden);
   copyDs.classList.add(successful);
   setTimeout(() => {
@@ -68,4 +76,40 @@ function copy(text) {
   setTimeout(() => {
     copyDs.classList.add(successfulHidden);
   }, 2200);//
+}
+
+function updateaNavItems() {
+  const yPos = window.scrollY + window.innerHeight / 2;
+  const url =  window.location.href.split('?')[0];
+
+  navItems.forEach(navElement => {
+    if (navElement.href === url) {
+      navElement.classList.add(navItemActive);
+    } else {
+      navElement.classList.remove(navItemActive);
+    }
+  });
+
+  Object.entries(anchorsHeight).forEach(([aKey, aVal]) => {
+    if (yPos > aVal) {
+      navItems.forEach(navElement => {
+        console.log(navElement.href === url)
+        if (navElement.href.includes("#" + aKey)) {
+          navElement.classList.add(navItemActive);
+        } else {
+          navElement.classList.remove(navItemActive);
+        }
+      });
+      return;
+    }
+  });
+}
+
+function updateaAnchorsHeight() {
+  anchors.forEach(e => {
+    if (e.hasAttribute('id')) {
+      const rect = e.getBoundingClientRect();
+      anchorsHeight[e.id] = rect.top + window.scrollY;
+    }
+  });
 }

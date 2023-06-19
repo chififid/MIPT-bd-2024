@@ -1,0 +1,25 @@
+@import "./variables";
+
+.block:nth-child(3), .block:nth-child(5) {
+  background: $sub-bg-color;
+}
+
+.rules {
+  &__text {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: calc($main-padding / 8);
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  &__img {
+    width: 70%;
+    margin: $main-padding 15%; 
+  }
+}

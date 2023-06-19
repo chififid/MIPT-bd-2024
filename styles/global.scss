@@ -22,11 +22,18 @@ i {
   padding: $main-padding;
 }
 
-.block__title {
-  text-align: center;
-  margin-bottom: $main-padding;
-  font-size: 2.5rem;
-  line-height: 1.875rem;
+.block {
+  & > * {
+    max-width: $main-width;
+    margin: 0 auto;
+    padding: calc($main-padding - (2.5rem - 1.875rem) / 2);
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: calc($main-padding - (2.5rem - 1.875rem) / 2);
+    font-size: 2.5rem;
+  }
 }
 
 b {
@@ -78,6 +85,7 @@ b {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 .scroll-transition .block-header {
@@ -126,6 +134,10 @@ b {
     transition: color $transition-delay;
 
     &:hover {
+      color: $text-color;
+    }
+
+    &-active {
       color: $text-color;
     }
   }
