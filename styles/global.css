@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+}
 html {
   scroll-behavior: smooth;
   font-size: 16px;

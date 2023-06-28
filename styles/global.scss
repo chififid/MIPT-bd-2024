@@ -1,5 +1,10 @@
 @import "./variables";
 
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -7,7 +12,7 @@ html {
 
 body {
   background: $bg-color;
-  font-family: 'Lexend Deca';
+  font-family: "Lexend Deca";
   color: $text-color;
   padding-top: calc($main-padding * 2 + 36px);
 }
