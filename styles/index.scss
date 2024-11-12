@@ -294,7 +294,7 @@
         max-width: 800px;
         text-align: center;
         margin: 0 auto 3rem;
-        line-height: 1.2;
+        line-height: 1.1;
     }
 
     &__grid {
@@ -319,6 +319,7 @@
             font-size: clamp(1.4rem, 3vw, 1.8rem);
             font-weight: 500;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
             color: $color-primary;
         }
 
@@ -836,7 +837,7 @@
 
         &__slogans {
             left: 4vw;
-            bottom: 8vw;
+            bottom: 10vw;
         }
 
         &__slogan {
@@ -853,6 +854,10 @@
 
         &__card {
             padding: 1rem;
+        }
+
+        h3 {
+            line-height: 1.2;
         }
     }
 

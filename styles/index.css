@@ -325,7 +325,7 @@
   max-width: 800px;
   text-align: center;
   margin: 0 auto 3rem;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .achievements__grid {
@@ -357,6 +357,7 @@
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 500;
   margin-bottom: 0.5rem;
+  line-height: 1.2;
   color: #2D3B8E;
 }
 
@@ -1007,7 +1008,7 @@
   }
   .hero__slogans {
     left: 4vw;
-    bottom: 8vw;
+    bottom: 10vw;
   }
   .hero__slogan {
     font-size: 3.5vw;
@@ -1020,6 +1021,9 @@
   }
   .about__card {
     padding: 1rem;
+  }
+  .about h3 {
+    line-height: 1.2;
   }
   .achievements__grid {
     -ms-grid-columns: 1fr;
