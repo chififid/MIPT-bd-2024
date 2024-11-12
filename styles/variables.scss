@@ -1,23 +1,16 @@
-$bg-color: #323437;
-$sub-bg-color: #2c2e31;
-$text-color: #d1d0c5;
-$link-color: #646669;
-$main-color: #e2b714;
-$sub-main-color: #7e2a33;
+// Основные цвета
+$color-primary: #2D3B8E;    // Синий
+$color-light-blue: #a2c2da;
+$color-secondary: #FF4D4D;   // Красный для кнопок
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-gray: #F5F5F5;
+$color-dark: #353535;
 
-$transition-delay: 0.3s;
-
+// Размеры
 $main-width: 1080px;
 $main-padding: 2rem;
 $main-gap: 0.75rem;
+$header-height: 80px;
 
-$main-text-shadow: 
-  -1.5px 0px 0px black,
-  1.5px 0px 0px black, 
-  0px -1.5px 0px black, 
-  0px 1.5px 0px black,
-  -1.5px 1.5px 0px black, 
-  1.5px -1.5px 0px black, 
-  -1.5px -1.5px 0px black, 
-  -1.5px -1.5px 0px black, 
-  1.5px 1.5px 0px black;
+$main-padding-adaptive: 3vw;

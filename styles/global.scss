@@ -1,8 +1,8 @@
 @import "./variables";
 
 @font-face {
-  font-family: "Lexend Deca";
-  src: url("../fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+  font-family: "Next Art";
+  src: url("../fonts/NextArt/NextArt.otf") format("opentype");
 }
 
 html {
@@ -11,81 +11,27 @@ html {
 }
 
 body {
-  background: $bg-color;
-  font-family: "Lexend Deca";
-  color: $text-color;
-  padding-top: calc($main-padding * 2 + 36px);
+  font-family: "Next Art";
+  color: $color-dark;
 }
 
-i {
-	font-style: italic;
-}
-
-.block > * {
-  max-width: $main-width;
-  margin: 0 auto;
-  padding: $main-padding;
-}
-
-.block {
-  & > * {
-    max-width: $main-width;
-    margin: 0 auto;
-    padding: calc($main-padding - (2.5rem - 1.875rem) / 2);
-  }
-
-  &__title {
-    text-align: center;
-    margin-bottom: calc($main-padding - (2.5rem - 1.875rem) / 2);
-    font-size: 2.5rem;
-  }
-}
-
-b {
+.logo-link {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+  height: 100px;
   font-weight: bold;
-}
-
-.text-link, .text-copy {
-  color: $link-color;
-  font-weight: bold;
+  color: $color-black;
   text-decoration: none;
-  transition: color $transition-delay;
-  cursor: pointer;
-  position: relative;
-  
-  &:hover {
-    color: $text-color;
-  }
+  background: url('../images/MiptLine.svg') no-repeat left center;
+  background-size: 100%;
+  padding-left: 75px;
+  width: 240px;
+  font-size: 1.3rem;
 }
 
-.text-copy {
-  &::after {
-    content: "Copied!";
-    position: absolute;
-    padding: $main-gap;
-    border-radius: 5px;
-    background: $sub-bg-color;
-    font-weight: normal;
-    color: $text-color;
-    line-height: 1rem;
-    transition: $transition-delay opacity;
-    top: -0.2rem;
-    left: 50%;
-    transform: translate3d(-50%, -100%, 0);
-    opacity: 0;
-  }
-
-  &-successful::after {
-    opacity: 1;
-  }
-  
-  &-successful-hidden::after {
-    display: none;
-  }
-}
-
-.block-header {
-  background: $sub-bg-color;
+.header {
+  background: #2c2e31;
   position: fixed;
   top: 0;
   left: 0;
@@ -93,221 +39,18 @@ b {
   z-index: 1;
 }
 
-.scroll-transition .block-header {
-  transition: transform $transition-delay;
+.scroll-transition .header {
+  transition: transform 0.3s;
 }
 
-.scroll-down .block-header {
+.scroll-down .header {
   transform: translate3d(0, -100%, 0);
 }
 
-.scroll-up .block-header {
+.scroll-up .header {
   transform: none;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-
-  &__img {
-    margin-right: $main-gap;
-    height: 32px;
-  }
-
-  &__text {
-    font-size: 32px;
-    line-height: 32px;
-  }
-}
-
-.navigation {
-  display: flex;
-  gap: $main-gap;
-  
-  &__item {
-    color: $link-color;
-    text-decoration: none;
-    font-size: 20px;
-
-    transition: color $transition-delay;
-
-    &:hover {
-      color: $text-color;
-    }
-
-    &-active {
-      color: $text-color;
-    }
-  }
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  gap: $main-gap;
-
-  &__item {
-    height: 20px;
-    text-decoration: none;
-    transition: filter $transition-delay;
-
-    &:hover {
-      filter: brightness(200%);
-    }
-  }
-
-  &__item-text {
-    color: $link-color;
-    font-size: 22px;
-    line-height: 20px;
-    font-weight: bold;
-    transform: translateY(-1px);
-  }
-
-  &__img {
-    height: 20px;
-  }
-}
-
-.burger-menu {
-  width: 28px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  &__item {
-    width: 80%;
-    height: 20%;
-    background: $link-color;
-    border-radius: 5px;
-    transition: all $transition-delay;
-  }
-
-  &__item:nth-child(1) {
-    transform-origin: right;
-  }
-
-  &__item:nth-child(2) {
-    width: 100%;
-  }
-
-  &__item:nth-child(3) {
-    transform-origin: right;
-  }
-
-  &:hover &__item {
-    background: $text-color;
-  }
-}
-
-.block-open .burger-menu {
-  &__item {
-    width: 80%;
-  }
-
-  &__item:nth-child(1) {
-    transform: rotate(-45deg);
-  }
-
-  &__item:nth-child(2) {
-    opacity: 0;
-  }
-
-  &__item:nth-child(3) {
-    transform: rotate(45deg);
-  }
-}
-
-.block-footer {
-  background: $sub-bg-color;
-}
-
-.footer {
-  padding-top: calc($main-padding / 2);
-  padding-bottom: calc($main-padding / 2);
-  text-align: center;
-
-  &__link {
-    text-decoration: none;
-    color: $link-color;
-    transition: color $transition-delay;
-
-    &:hover {
-      color: $text-color;
-    }
-  }
-}
-
-@media only screen and (max-width: calc($main-width + $main-padding * 2)) {
-  html {
-    font-size: 1.5vw;
-  }
-} 
-
-@media only screen and (min-width: 750px) {
-  .burger-menu {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  html {
-    font-size: 12px;
-  }
-
-  body {
-    padding-top: calc($main-padding * 2 + 24px);
-  }
-
-  .logo {
-    &__img {
-      margin-right: $main-gap;
-      height: 24px;
-    }
-
-    &__text {
-      font-size: 24px;
-      line-height: 24px;
-    }
-  }
-
-  .navigation {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    background: $sub-bg-color;
-    padding: 0 $main-padding;
-    padding: 0 $main-padding;
-    bottom: 0;
-    left: 0;
-    gap: 0;
-    background: $sub-bg-color;
-    transform: translate3d(0, 99%, 0);
-    transition: padding $transition-delay, gap $transition-delay;
-    overflow: hidden;
-
-    &__item {
-      overflow: hidden;
-      transition: height $transition-delay;
-      height: 0;
-    }
-  }
-
-  .block-open .navigation {
-    padding: 0 $main-padding $main-padding $main-padding;
-
-    &__item {
-      height: 32px;
-    }
-  }
+h2 {
+  line-height: 1.2;
 }
